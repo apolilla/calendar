@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calendar</string>
+
+    <!-- Home -->
+    <string name="today">Today</string>
+    <string name="previous_month">Previous month</string>
+    <string name="next_month">Next month</string>
+    <string name="previous_year">Previous year</string>
+    <string name="next_year">Next year</string>
+    <string name="choose_month">Choose month and year</string>
+    <string name="new_task">New task</string>
+    <string name="create_task">Create task</string>
+    <string name="no_tasks">No tasks for this day</string>
+    <string name="recurring">Recurring</string>
+    <string name="has_attachments">Has attachments</string>
+    <string name="notifications_disabled">Notifications are off: reminders will not be shown.</string>
+    <string name="enable">Enable</string>
+    <plurals name="tasks_count">
+        <item quantity="one">%d task</item>
+        <item quantity="other">%d tasks</item>
+    </plurals>
+
+    <!-- Edit -->
+    <string name="edit_task">Edit task</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="name_required">Name *</string>
+    <string name="error_name_required">Enter a name</string>
+    <string name="color">Color</string>
+    <string name="description">Description</string>
+    <string name="repeat">Repeat</string>
+    <string name="repeat_every">Repeat every</string>
+    <string name="until">Until</string>
+    <string name="no_end_date">No end date</string>
+    <string name="clear_end_date">Remove end date</string>
+    <string name="error_interval">Enter a whole number greater than 0</string>
+    <string name="error_end_date">The end date cannot be before the task date</string>
+    <string name="next_occurrences">Next occurrences</string>
+    <string name="no_occurrences">No occurrence falls before the end date.</string>
+    <string name="repeat_summary_until">%1$s until %2$s (inclusive)</string>
+    <string name="default_horizon_note">Without an end date, occurrences are created for the next 2 years (20 for yearly tasks).</string>
+    <string name="truncated_note">Limited to 1000 occurrences. Choose an earlier end date to cover the whole period.</string>
+    <plurals name="will_create">
+        <item quantity="one">%d task will be created</item>
+        <item quantity="other">%d tasks will be created</item>
+    </plurals>
+    <string name="notifications">Notifications</string>
+    <string name="attachments">Attachments</string>
+    <string name="attach_file">Attach file</string>
+    <string name="take_photo">Take photo</string>
+    <string name="remove_attachment">Remove %1$s</string>
+    <string name="instance_info">This task is occurrence %2$d of %3$d of a series (%1$s). Changes apply to this occurrence only.</string>
+
+    <string name="task_created">Task saved</string>
+    <string name="task_updated">Changes saved</string>
+    <string name="task_deleted">Task deleted</string>
+    <plurals name="tasks_created">
+        <item quantity="one">%d task created</item>
+        <item quantity="other">%d tasks created</item>
+    </plurals>
+    <string name="save_failed">The task could not be saved. Please try again.</string>
+    <string name="task_not_found">This task no longer exists.</string>
+    <string name="attachment_failed">Some files could not be attached.</string>
+    <string name="attachment_unavailable">Not available (moved or deleted)</string>
+    <string name="attachment_cannot_open">This file cannot be opened. It may have been moved or deleted, or no app can open it.</string>
+    <string name="photo">Photo</string>
+    <string name="file">File</string>
+
+    <!-- Camera -->
+    <string name="camera_permission_denied">Camera permission is needed to take photos.</string>
+    <string name="camera_permission_denied_settings">Camera permission was denied. You can allow it in Settings.</string>
+    <string name="no_camera">No camera is available on this device.</string>
+    <string name="camera_failed">The photo could not be taken.</string>
+    <string name="settings">Settings</string>
+
+    <!-- Recurrence -->
+    <string name="recurrence_none">Does not repeat</string>
+    <string name="recurrence_daily">Every day</string>
+    <string name="recurrence_weekly">Every week</string>
+    <string name="recurrence_monthly">Every month</string>
+    <string name="recurrence_yearly">Every year</string>
+    <string name="recurrence_custom">Custom</string>
+    <string name="recurrence_every_n">Every %1$d %2$s</string>
+    <plurals name="unit_hour">
+        <item quantity="one">hour</item>
+        <item quantity="other">hours</item>
+    </plurals>
+    <plurals name="unit_day">
+        <item quantity="one">day</item>
+        <item quantity="other">days</item>
+    </plurals>
+    <plurals name="unit_week">
+        <item quantity="one">week</item>
+        <item quantity="other">weeks</item>
+    </plurals>
+    <plurals name="unit_month">
+        <item quantity="one">month</item>
+        <item quantity="other">months</item>
+    </plurals>
+    <plurals name="unit_year">
+        <item quantity="one">year</item>
+        <item quantity="other">years</item>
+    </plurals>
+
+    <!-- Reminders -->
+    <string name="reminder_hours_1">1 hour before</string>
+    <string name="reminder_hours_2">2 hours before</string>
+    <string name="reminder_hours_5">5 hours before</string>
+    <string name="reminder_days_1">1 day before</string>
+    <string name="reminder_days_2">2 days before</string>
+    <string name="reminder_weeks_1">1 week before</string>
+    <string name="reminder_weeks_2">2 weeks before</string>
+    <string name="reminder_months_1">1 month before</string>
+    <string name="reminder_done">done</string>
+    <string name="no_notifications">No notifications</string>
+
+    <!-- Colors -->
+    <string name="color_blue">Blue</string>
+    <string name="color_red">Red</string>
+    <string name="color_green">Green</string>
+    <string name="color_yellow">Yellow</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_purple">Purple</string>
+    <string name="color_teal">Teal</string>
+    <string name="color_pink">Pink</string>
+    <string name="color_gray">Gray</string>
+
+    <!-- Detail -->
+    <string name="task_details">Task</string>
+    <string name="back">Back</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="delete_task_title">Delete task?</string>
+    <string name="delete_task_message">The task, its notifications and its photos will be deleted.</string>
+    <string name="delete_instance_message">This task belongs to a series. You can delete only this occurrence or the whole series.</string>
+    <string name="delete_this_only">This one</string>
+    <string name="delete_whole_series">Whole series</string>
+    <string name="until_date">" until %1$s"</string>
+    <string name="instance_position">Occurrence %1$d of %2$d</string>
+    <string name="no_attachments">No attachments</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">Task reminders</string>
+    <string name="notification_channel_description">Reminders before your tasks start</string>
+    <string name="notification_text">%1$s at %2$s</string>
+</resources>

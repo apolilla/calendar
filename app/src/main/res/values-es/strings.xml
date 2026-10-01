@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calendario</string>
+
+    <!-- Inicio -->
+    <string name="today">Hoy</string>
+    <string name="previous_month">Mes anterior</string>
+    <string name="next_month">Mes siguiente</string>
+    <string name="previous_year">Año anterior</string>
+    <string name="next_year">Año siguiente</string>
+    <string name="choose_month">Elegir mes y año</string>
+    <string name="new_task">Nueva tarea</string>
+    <string name="create_task">Crear tarea</string>
+    <string name="no_tasks">No hay tareas este día</string>
+    <string name="recurring">Se repite</string>
+    <string name="has_attachments">Tiene adjuntos</string>
+    <string name="notifications_disabled">Las notificaciones están desactivadas: no verás los recordatorios.</string>
+    <string name="enable">Activar</string>
+    <plurals name="tasks_count">
+        <item quantity="one">%d tarea</item>
+        <item quantity="many">%d tareas</item>
+        <item quantity="other">%d tareas</item>
+    </plurals>
+
+    <!-- Edición -->
+    <string name="edit_task">Editar tarea</string>
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="ok">Aceptar</string>
+    <string name="name_required">Nombre *</string>
+    <string name="error_name_required">Escribe un nombre</string>
+    <string name="color">Color</string>
+    <string name="description">Descripción</string>
+    <string name="repeat">Repetir</string>
+    <string name="repeat_every">Repetir cada</string>
+    <string name="until">Hasta</string>
+    <string name="no_end_date">Sin fecha de fin</string>
+    <string name="clear_end_date">Quitar fecha de fin</string>
+    <string name="error_interval">Escribe un número entero mayor que 0</string>
+    <string name="error_end_date">La fecha de fin no puede ser anterior a la fecha de la tarea</string>
+    <string name="next_occurrences">Próximas repeticiones</string>
+    <string name="no_occurrences">No hay ninguna repetición antes de la fecha de fin.</string>
+    <string name="repeat_summary_until">%1$s hasta el %2$s (incluido)</string>
+    <string name="default_horizon_note">Sin fecha de fin, se crean repeticiones para los próximos 2 años (20 si es anual).</string>
+    <string name="truncated_note">Limitado a 1000 repeticiones. Elige una fecha de fin anterior para cubrir todo el periodo.</string>
+    <plurals name="will_create">
+        <item quantity="one">Se creará %d tarea</item>
+        <item quantity="many">Se crearán %d tareas</item>
+        <item quantity="other">Se crearán %d tareas</item>
+    </plurals>
+    <string name="notifications">Notificaciones</string>
+    <string name="attachments">Adjuntos</string>
+    <string name="attach_file">Adjuntar archivo</string>
+    <string name="take_photo">Hacer foto</string>
+    <string name="remove_attachment">Quitar %1$s</string>
+    <string name="instance_info">Esta tarea es la repetición %2$d de %3$d de una serie (%1$s). Los cambios solo afectan a esta repetición.</string>
+
+    <string name="task_created">Tarea guardada</string>
+    <string name="task_updated">Cambios guardados</string>
+    <string name="task_deleted">Tarea eliminada</string>
+    <plurals name="tasks_created">
+        <item quantity="one">%d tarea creada</item>
+        <item quantity="many">%d tareas creadas</item>
+        <item quantity="other">%d tareas creadas</item>
+    </plurals>
+    <string name="save_failed">No se ha podido guardar la tarea. Inténtalo de nuevo.</string>
+    <string name="task_not_found">Esta tarea ya no existe.</string>
+    <string name="attachment_failed">No se han podido adjuntar algunos archivos.</string>
+    <string name="attachment_unavailable">No disponible (movido o eliminado)</string>
+    <string name="attachment_cannot_open">No se puede abrir este archivo. Puede que se haya movido o eliminado, o que ninguna app pueda abrirlo.</string>
+    <string name="photo">Foto</string>
+    <string name="file">Archivo</string>
+
+    <!-- Cámara -->
+    <string name="camera_permission_denied">Se necesita permiso de cámara para hacer fotos.</string>
+    <string name="camera_permission_denied_settings">Se ha denegado el permiso de cámara. Puedes concederlo en Ajustes.</string>
+    <string name="no_camera">Este dispositivo no tiene cámara disponible.</string>
+    <string name="camera_failed">No se ha podido hacer la foto.</string>
+    <string name="settings">Ajustes</string>
+
+    <!-- Repetición -->
+    <string name="recurrence_none">No se repite</string>
+    <string name="recurrence_daily">Cada día</string>
+    <string name="recurrence_weekly">Cada semana</string>
+    <string name="recurrence_monthly">Cada mes</string>
+    <string name="recurrence_yearly">Cada año</string>
+    <string name="recurrence_custom">Personalizado</string>
+    <string name="recurrence_every_n">Cada %1$d %2$s</string>
+    <plurals name="unit_hour">
+        <item quantity="one">hora</item>
+        <item quantity="many">horas</item>
+        <item quantity="other">horas</item>
+    </plurals>
+    <plurals name="unit_day">
+        <item quantity="one">día</item>
+        <item quantity="many">días</item>
+        <item quantity="other">días</item>
+    </plurals>
+    <plurals name="unit_week">
+        <item quantity="one">semana</item>
+        <item quantity="many">semanas</item>
+        <item quantity="other">semanas</item>
+    </plurals>
+    <plurals name="unit_month">
+        <item quantity="one">mes</item>
+        <item quantity="many">meses</item>
+        <item quantity="other">meses</item>
+    </plurals>
+    <plurals name="unit_year">
+        <item quantity="one">año</item>
+        <item quantity="many">años</item>
+        <item quantity="other">años</item>
+    </plurals>
+
+    <!-- Recordatorios -->
+    <string name="reminder_hours_1">1 hora antes</string>
+    <string name="reminder_hours_2">2 horas antes</string>
+    <string name="reminder_hours_5">5 horas antes</string>
+    <string name="reminder_days_1">1 día antes</string>
+    <string name="reminder_days_2">2 días antes</string>
+    <string name="reminder_weeks_1">1 semana antes</string>
+    <string name="reminder_weeks_2">2 semanas antes</string>
+    <string name="reminder_months_1">1 mes antes</string>
+    <string name="reminder_done">hecho</string>
+    <string name="no_notifications">Sin notificaciones</string>
+
+    <!-- Colores -->
+    <string name="color_blue">Azul</string>
+    <string name="color_red">Rojo</string>
+    <string name="color_green">Verde</string>
+    <string name="color_yellow">Amarillo</string>
+    <string name="color_orange">Naranja</string>
+    <string name="color_purple">Morado</string>
+    <string name="color_teal">Turquesa</string>
+    <string name="color_pink">Rosa</string>
+    <string name="color_gray">Gris</string>
+
+    <!-- Detalle -->
+    <string name="task_details">Tarea</string>
+    <string name="back">Atrás</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Eliminar</string>
+    <string name="delete_task_title">¿Eliminar la tarea?</string>
+    <string name="delete_task_message">Se eliminarán la tarea, sus notificaciones y sus fotos.</string>
+    <string name="delete_instance_message">Esta tarea pertenece a una serie. Puedes eliminar solo esta repetición o la serie completa.</string>
+    <string name="delete_this_only">Solo esta</string>
+    <string name="delete_whole_series">Toda la serie</string>
+    <string name="until_date">" hasta el %1$s"</string>
+    <string name="instance_position">Repetición %1$d de %2$d</string>
+    <string name="no_attachments">Sin adjuntos</string>
+
+    <!-- Notificaciones -->
+    <string name="notification_channel_name">Recordatorios de tareas</string>
+    <string name="notification_channel_description">Avisos antes de que empiecen tus tareas</string>
+    <string name="notification_text">%1$s a las %2$s</string>
+</resources>
