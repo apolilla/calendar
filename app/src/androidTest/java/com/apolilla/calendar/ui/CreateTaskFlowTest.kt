@@ -54,7 +54,7 @@ class CreateTaskFlowTest {
     }
 
     private fun titleText(): String =
-        compose.onNodeWithTag("month_title").fetchSemanticsNode().config
+        compose.onNodeWithTag("month_title", useUnmergedTree = true).fetchSemanticsNode().config
             .getOrNull(SemanticsProperties.Text)?.joinToString { it.text } ?: ""
 
     @Test

@@ -37,6 +37,20 @@ class ReminderNotificationTest {
     private fun posted(taskId: Long, offset: ReminderOffset) =
         notificationManager.activeNotifications.any { it.id == TaskNotifier.notificationId(taskId, offset) }
 
+    /** Notifications are enqueued asynchronously by the system: poll until [expected] or timeout. */
+    private fun awaitPosted(taskId: Long, offset: ReminderOffset, expected: Boolean, timeoutMs: Long = 5_000): Boolean {
+        val deadline = System.currentTimeMillis() + timeoutMs
+        while (System.currentTimeMillis() < deadline) {
+            if (posted(taskId, offset) == expected) return true
+            Thread.sleep(100)
+        }
+        return posted(taskId, offset) == expected
+    }
+
+    private fun diagnostics() = "canPost=${container.notifier.canPost()} " +
+        "enabled=${notificationManager.areNotificationsEnabled()} " +
+        "active=${notificationManager.activeNotifications.map { it.id }}"
+
     @Test
     fun dueReminder_isPostedOnce_andCancelledWhenTaskDeleted() = runBlocking {
         val start = LocalDateTime.now().plusHours(3).withSecond(0).withNano(0)
@@ -57,20 +71,22 @@ class ReminderNotificationTest {
         ).single()
 
         container.reminderProcessor.run()
-        assertTrue(posted(id, ReminderOffset.HOURS_5))
+        assertTrue("due reminder not shown: ${diagnostics()}", awaitPosted(id, ReminderOffset.HOURS_5, true))
         assertFalse(posted(id, ReminderOffset.HOURS_1))
 
         // Running again (e.g. a reboot) must not produce a duplicate.
         notificationManager.cancel(TaskNotifier.notificationId(id, ReminderOffset.HOURS_5))
+        assertTrue(awaitPosted(id, ReminderOffset.HOURS_5, false))
         container.reminderProcessor.run()
-        assertFalse(posted(id, ReminderOffset.HOURS_5))
+        Thread.sleep(1_000)
+        assertFalse("reminder shown twice", posted(id, ReminderOffset.HOURS_5))
         assertEquals(1, container.repository.getPendingReminders().count { it.taskId == id })
 
         // Re-post, then delete: the shown notification and pending reminders go away.
         container.notifier.show(listOf(container.repository.getPendingReminders().first { it.taskId == id }))
-        assertTrue(posted(id, ReminderOffset.HOURS_1))
+        assertTrue("re-posted reminder not shown: ${diagnostics()}", awaitPosted(id, ReminderOffset.HOURS_1, true))
         container.taskService.delete(id)
-        assertFalse(posted(id, ReminderOffset.HOURS_1))
+        assertTrue("notification not cancelled on delete", awaitPosted(id, ReminderOffset.HOURS_1, false))
         assertTrue(container.repository.getPendingReminders().none { it.taskId == id })
     }
 }
