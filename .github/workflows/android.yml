@@ -82,7 +82,30 @@ jobs:
           profile: pixel_6
           disable-animations: true
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-          script: ./gradlew --stacktrace connectedDebugAndroidTest
+          script: ./gradlew --stacktrace connectedDebugAndroidTest > instrumented.log 2>&1 || { tail -n 200 instrumented.log; exit 1; }
+
+      - name: Summarize failures as annotations
+        if: failure()
+        shell: bash
+        run: |
+          python3 - <<'EOF'
+          import glob, xml.etree.ElementTree as ET
+          found = 0
+          for path in glob.glob("app/build/outputs/androidTest-results/connected/**/*.xml", recursive=True):
+              for case in ET.parse(path).getroot().iter("testcase"):
+                  for f in list(case.findall("failure")) + list(case.findall("error")):
+                      found += 1
+                      text = (f.text or f.get("message") or "").strip().replace("%", "%25").replace("\r", "").replace("\n", "%0A")
+                      print(f"::error title={case.get('classname')}.{case.get('name')}::{text[:3000]}")
+          if not found:
+              try:
+                  lines = open("instrumented.log", errors="replace").read().splitlines()
+              except FileNotFoundError:
+                  lines = []
+              keep = [l for l in lines if any(k in l for k in ("FAILED", "What went wrong", "Exception", "error:", "e: "))]
+              msg = "%0A".join(l.replace("%", "%25") for l in (keep or lines)[-60:])
+              print(f"::error title=instrumented log::{msg[:6000]}")
+          EOF
 
       - name: Upload instrumented test reports
         if: always()
